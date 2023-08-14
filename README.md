@@ -268,7 +268,7 @@ El token JWT almacenara dentro del payload el id del token generado por el usuar
 Para probar la autenticacion Bearer se debe enviar una solicitud HTTP a la ruta /api
 con el token JWT en el encabezado Authorization acompañado de la palabra Bearer
 
-Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZiIsImlhdCI
+Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDUklTVElBTk8iOiJTSVVVVVVVVVVVVVUiLCJpYXQiOjE2OTE5OTE3MzIsImV4cCI6MTY5MTk5NTMzMn0.emWkEn4Mvn13EgHYPVDJL8SyXKgyS3s4W9WPOKfm0cs
 
 ![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ed970d2f-3f49-4d82-b4cf-46aa746eecf8)
 
