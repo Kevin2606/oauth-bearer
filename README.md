@@ -2,6 +2,24 @@
 
 Creacion de autenticacion con Oauth2 utilizando la libreria [PassportJS](https://www.passportjs.org/)
 
+Este repositorio es una guia para la creacion de una autenticacion con HTTP Bearer utilizando la libreria [PassportJS](https://www.passportjs.org/) y [MongoDB](https://www.mongodb.com/).
+
+Se utilizara la libreria [jose](https://www.npmjs.com/package/jose) para la creacion de los tokens JWT.
+
+>Nota: Se asume conocimiento basico de [NodeJS](https://nodejs.org/es/), [Express](https://expressjs.com/es/), [MongoDB](https://www.mongodb.com/) y [Tokens JWT](https://jwt.io/).
+
+## Instalacion
+
+Clona el repositorio
+```bash
+git clone https://github.com/Kevin2606/oauth-bearer.git
+```
+
+o inicializa un proyecto de node
+```bash
+npm init -y
+```
+
 ## Dependencias
 ```bash
 npm i -E express dotenv passport jose mongodb passport-http-bearer
@@ -68,6 +86,8 @@ En el archivo middlewareJWT.js
 // middlewareJWT.js
 import { SignJWT, jwtVerify } from "jose"
 import con from "../database/conexionDB.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const conexionDB = await con();
 
@@ -192,6 +212,8 @@ En el archivo conexionDB.js
 ```Javascript
 // conexionDB.js
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default async function con() {
   try {
@@ -223,3 +245,31 @@ PASSWORD=contraseña_de_la_base_de_datos
 JWT_SECRET=clave_secreta_para_firmar_el_token
 PUERTO=puerto_de_la_aplicacion
 ```
+
+## Ejecutar la aplicacion
+Para ejecutar la aplicacion se debe ejecutar el siguiente comando en la terminal
+```Javascript
+npm run dev
+```
+
+## Probar la aplicacion
+
+Se hace uso de la herramienta **Thunder Client** para probar la aplicacion. Se debe enviar una solicitud HTTP GET a la ruta /token/:nombre
+
+![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/5c7326d4-eb52-453b-90aa-d82ee313ce0f)
+
+La respuesta de la aplicacion es un objeto JSON que contiene el token JWT.
+
+![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ce034cd6-a443-43f0-98a1-2fba5c54f682)
+
+El token JWT almacenara dentro del payload el id del token generado por el usuario en la base de datos
+
+### Probar la autenticacion Bearer
+Para probar la autenticacion Bearer se debe enviar una solicitud HTTP a la ruta /api
+con el token JWT en el encabezado Authorization acompañado de la palabra Bearer
+
+Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZjQ4ZiIsImlhdCI
+
+![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ed970d2f-3f49-4d82-b4cf-46aa746eecf8)
+
+La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenticacion exitosa" y el nombre del usuario que genero el token
