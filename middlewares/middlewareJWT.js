@@ -16,7 +16,7 @@ const crearToken = async (req, res) => {
         .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
         .setIssuedAt()
         .setExpirationTime('1h')
-        .sign(encoder.encode("JWT_SECRET"));
+        .sign(encoder.encode(process.env.JWT_SECRET));
     res.send(jwtConstructor);
 }
 
@@ -25,7 +25,7 @@ const validarToken = async (token) => {
         const encoder = new TextEncoder();
         const jwtData = await jwtVerify(
             token,
-            encoder.encode("JWT_SECRET")
+            encoder.encode(process.env.JWT_SECRET)
         );
 
         // Buscar el id del token en la colección token

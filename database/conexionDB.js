@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 
 export default async function con() {
   try {
-    const uri = `mongodb+srv://root:26102610@cluster0.owv3sij.mongodb.net/oauth_bearer`;
+    const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.owv3sij.mongodb.net/${process.env.DB}`;
     const options = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
