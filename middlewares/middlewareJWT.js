@@ -1,6 +1,8 @@
 import { SignJWT, jwtVerify } from "jose"
 import con from "../database/conexionDB.js";
 import { ObjectId } from "mongodb";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const conexionDB = await con();
 

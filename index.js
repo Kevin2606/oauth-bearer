@@ -1,7 +1,9 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import passportHelper from './helpers/passportHelpert.js';
 import { crearToken } from './middlewares/middlewareJWT.js';
 
+dotenv.config();
 const app = express();
 
 app.use(passportHelper.initialize());
