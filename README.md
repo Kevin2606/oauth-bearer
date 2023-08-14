@@ -272,4 +272,11 @@ Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDUklTVElBTk8iOiJTSVVVVVV
 
 ![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ed970d2f-3f49-4d82-b4cf-46aa746eecf8)
 
-La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenticacion exitosa" y el nombre del usuario que genero el token
+La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenticacion exitosa" y el nombre del usuario que genero el token.
+
+> Este proyecto fue realizado con fines educativos y abarca los temas de autenticacion y autorizacion con JWT y Bearer.
+
+## Autores
+- [Kevin Andres Gallardo Robles](https://github.com/Kevin2606)
+- [Jonathan David Alvarez Monsalve](https://github.com/jdam97)
+- [Daniel Santiago Vera Anaya](https://github.com/dVera17)
