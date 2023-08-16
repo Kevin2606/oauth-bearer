@@ -11,6 +11,7 @@ const crearToken = async (req, res) => {
 
     // Busca el parámetro ``usuario`` en la colección "usuarios"
     const result = await conexionDB.collection('usuarios').findOne({usuario: req.params.usuario});
+    if (!result) return res.status(404).send('Usuario no encontrado');
     const id = result._id.toString();
 
     // Crear el token con el id del documento buscado
