@@ -9,11 +9,11 @@ const conexionDB = await con();
 const crearToken = async (req, res) => {
     const encoder = new TextEncoder();
 
-    // Guardar el parámetro ``nombre`` en la colección token
-    const result = await conexionDB.collection('token').insertOne({ nombre: req.params.nombre });
-    const id = result.insertedId.toString();
+    // Busca el parámetro ``usuario`` en la colección "usuarios"
+    const result = await conexionDB.collection('usuarios').findOne({usuario: req.params.usuario});
+    const id = result._id.toString();
 
-    // Crear el token con el id del documento insertado
+    // Crear el token con el id del documento buscado
     const jwtConstructor = await new SignJWT({ id: id})
         .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
         .setIssuedAt()
@@ -36,7 +36,7 @@ const validarToken = async (token) => {
         Si el token es válido, pero no existe en la colección token, se retorna null
         Si el token no es válido, se retorna false
         */
-        return await conexionDB.collection('token').findOne({_id: new ObjectId(jwtData.payload.id)});
+        return await conexionDB.collection('usuarios').findOne({_id: new ObjectId(jwtData.payload.id)});
     } catch (error) {
         console.log(error);
         return false;
