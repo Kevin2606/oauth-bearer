@@ -22,6 +22,11 @@ npm init -y
 
 ## Dependencias
 ```bash
+npm install
+```
+o si inicializaste un proyecto de node
+
+```bash
 npm i -E express dotenv passport jose mongodb passport-http-bearer
 ```
 > Dependencia de desarrollo
@@ -306,25 +311,25 @@ npm run dev
 
 ## Probar la aplicacion
 
-Se hace uso de la herramienta **Thunder Client** para probar la aplicacion. Se debe enviar una solicitud HTTP GET a la ruta /token/:nombre
+Se hace uso de la herramienta **Thunder Client** para probar la aplicacion. Se debe enviar una solicitud HTTP GET a la ruta /token/:usuario
 
-![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/5c7326d4-eb52-453b-90aa-d82ee313ce0f)
+![image](./assets/img/obtener_token.png)
 
 La respuesta de la aplicacion es un objeto JSON que contiene el token JWT.
 
-![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ce034cd6-a443-43f0-98a1-2fba5c54f682)
+![image](./assets/img/jwt_decodificado.png)
 
 El token JWT almacenara dentro del payload el id del token generado por el usuario en la base de datos
 
 ### Probar la autenticacion Bearer
-Para probar la autenticacion Bearer se debe enviar una solicitud HTTP a la ruta /api
+Para probar la autenticacion Bearer se debe enviar una solicitud HTTP a la ruta /api/vendedor o /api/admin
 con el token JWT en el encabezado Authorization acompañado de la palabra Bearer
 
 Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDUklTVElBTk8iOiJTSVVVVVVVVVVVVVUiLCJpYXQiOjE2OTE5OTE3MzIsImV4cCI6MTY5MTk5NTMzMn0.emWkEn4Mvn13EgHYPVDJL8SyXKgyS3s4W9WPOKfm0cs
 
-![image](https://github.com/Kevin2606/oauth-bearer/assets/54305330/ed970d2f-3f49-4d82-b4cf-46aa746eecf8)
+![image](./assets/img/acceso_api.png)
 
-La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenticacion exitosa" y el nombre del usuario que genero el token.
+La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenticacion exitosa" y los datos del usuario que genero el token.
 
 > Este proyecto fue realizado con fines educativos y abarca los temas de autenticacion y autorizacion con JWT y Bearer.
 
