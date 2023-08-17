@@ -333,6 +333,18 @@ La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenti
 
 > Este proyecto fue realizado con fines educativos y abarca los temas de autenticacion y autorizacion con JWT y Bearer.
 
+### Alternativas para el manejo de roles
+Hasta este punto se ha logrado implementar la autenticacion y autorizacion con JWT y Bearer. Sin embargo, se puede mejorar la seguridad de la aplicacion haciendo uso de otras herramientas como lo son:
+
+- [express-acl](https://www.npmjs.com/package/express-acl)
+- [Access Control](https://www.npmjs.com/package/accesscontrol)
+
+Estas herramientas permiten definir roles y permisos para cada ruta de la aplicacion. De esta manera, se puede definir que rutas son accesibles para cada rol.
+
+>Nota: Hay que tener en cuenta que estas herramientas no son las unicas, existen muchas mas que permiten realizar lo mismo.
+
+Un ejemplo de como se puede implementar la herramienta express-acl se encuentra en la [rama acl](https://github.com/Kevin2606/oauth-bearer/tree/acl) de este repositorio.
+
 ## Autores
 - [Kevin Andres Gallardo Robles](https://github.com/Kevin2606)
 - [Jonathan David Alvarez Monsalve](https://github.com/jdam97)
