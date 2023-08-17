@@ -333,7 +333,7 @@ La respuesta de la aplicacion es un objeto JSON que contiene el mensaje "Autenti
 
 > Este proyecto fue realizado con fines educativos y abarca los temas de autenticacion y autorizacion con JWT y Bearer.
 
-### Alternativas para el manejo de roles
+## Alternativas para el manejo de roles
 Hasta este punto se ha logrado implementar la autenticacion y autorizacion con JWT y Bearer. Sin embargo, se puede mejorar la seguridad de la aplicacion haciendo uso de otras herramientas como lo son:
 
 - [express-acl](https://www.npmjs.com/package/express-acl)
