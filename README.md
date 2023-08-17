@@ -32,7 +32,7 @@ npm install
 
 
 ## Configuracion de express-acl
-En el index.js o app.js
+En el nacl.json
 ```Json
 // nacl.json
 [
