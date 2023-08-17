@@ -4,7 +4,7 @@ dotenv.config();
 
 export default async function con() {
   try {
-    const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.owv3sij.mongodb.net/${process.env.DB}`;
+    const uri = `mongodb+srv://${process.env.ATLAS_USER}:${process.env.ATLAS_PASSWORD}@cluster0.owv3sij.mongodb.net/${process.env.ATLAS_DB}`;
     const options = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
