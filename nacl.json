@@ -1,0 +1,24 @@
+[
+    {
+      "group": "admin",
+      "permissions": [
+        {
+          "resource": "*",
+          "methods": "*",
+          "action": "allow"
+        }
+      ],
+      "action": "allow"
+    },
+    {
+      "group": "vendedor",
+      "permissions": [
+        {
+          "resource": "vendedor/",
+          "methods": ["POST", "GET", "PUT"],
+          "action": "allow"
+        }
+      ],
+        "action": "deny"
+    }
+]
